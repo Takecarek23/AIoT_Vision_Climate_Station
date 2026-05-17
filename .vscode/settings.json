@@ -15,5 +15,6 @@
         "initializer_list": "cpp",
         "span": "cpp",
         "regex": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "D:/LabIoT/YoloUNO_PlatformIO-ESP32_project/lib/ArduinoJson/src"
 }
