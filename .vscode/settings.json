@@ -16,5 +16,5 @@
         "span": "cpp",
         "regex": "cpp"
     },
-    "cmake.sourceDirectory": "D:/LabIoT/YoloUNO_PlatformIO-ESP32_project/lib/ArduinoJson/src"
+    "cmake.sourceDirectory": "C:/Users/Hi/Documents/Đống tài liệu/IOT/BTL/AIoT_Vision_Climate_Station/lib/ArduinoJson/src"
 }
