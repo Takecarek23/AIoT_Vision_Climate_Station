@@ -2,7 +2,10 @@
 #define __LED_BLINKY__
 #include <Arduino.h>
 #include "global.h"
-#define LED_GPIO 48
+
+#define LED1_GPIO 43
+#define LED2_GPIO 44
+void led_control(int state);
 void led_blinky(void *pvParameters);
 
 

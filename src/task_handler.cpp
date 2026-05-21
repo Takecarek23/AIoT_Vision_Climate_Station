@@ -1,4 +1,5 @@
 #include <task_handler.h>
+#include "component_control.h"
 void handleWebSocketMessage(String message)
 {
     Serial.println(message);
@@ -18,7 +19,34 @@ void handleWebSocketMessage(String message)
 
         Serial.printf("Web Control -> MODE: %d | Status: %s\n", mode, status.c_str());
 
-        
+        // Chỉ xử lý nếu trạng thái là ON (người dùng chọn chế độ đó)
+        if (status) {
+            switch (mode) {
+                case 0: 
+                    fanMode = 0;
+                    Serial.println("=> MODE: Fan OFF");
+                    fan_control(0);
+                    break;
+                case 1:  
+                    fanMode = 1;
+                    Serial.println("=> MODE: Fan Level 1");
+                    fan_control(1);
+                    break;
+                case 2: 
+                    fanMode = 2;
+                    Serial.println("=> MODE: Fan Level 2");
+                    fan_control(2);
+                    break;
+                case 3: 
+                    fanMode = 3;
+                    Serial.println("=> MODE: Fan Auto");
+                    fan_control(3);
+                    break;
+                default:
+                    Serial.println("=> Unknown MODE command");
+                    break;
+            }
+        }
         String fanNames[] = {"OFF", "Level 1", "Level 2", "Auto"};
         String reply = "{\"fan_mode\":" + String(fanMode) +
                 ",\"fan_name\":\"" + fanNames[fanMode] + "\"}";

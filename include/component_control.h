@@ -6,7 +6,7 @@
 #include <Wire.h>
 
 #include "global.h"
-#include "tinyml.h"
+
 void component_reset();
 
 void lcd_setup();

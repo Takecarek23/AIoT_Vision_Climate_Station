@@ -2,10 +2,12 @@
 #define __TEMP_HUMI_MONITOR__
 #include <Arduino.h>
 #include "LiquidCrystal_I2C.h"
-#include "DHT20.h"
+#include "DHT.h"
 #include "global.h"
-
+#include "freertos/semphr.h"
+#include "task_webserver.h"
+#include "tinyml.h"
 void temp_humi_monitor(void *pvParameters);
-
+void setup_monitoring_system();
 
 #endif

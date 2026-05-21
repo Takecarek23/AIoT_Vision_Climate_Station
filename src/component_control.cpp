@@ -1,4 +1,5 @@
 #include "component_control.h"
+#include "tinyml.h"
 
 void fan_setup()
 {
