@@ -1,5 +1,6 @@
 #include "tinyml.h"
-
+#include "component_control.h"
+float result = 0.0;
 // Globals, for the convenience of one-shot setup.
 namespace
 {
@@ -66,10 +67,11 @@ void tiny_ml_task(void *pvParameters)
         }
 
         // Get and process output
-        float result = output->data.f[0];
+        result = output->data.f[0];
         Serial.print("Inference result: ");
         Serial.println(result);
-
+        if (fanMode == 3)
+            fan_control(3);
         vTaskDelay(5000);
     }
 }
